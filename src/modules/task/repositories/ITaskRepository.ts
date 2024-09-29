@@ -10,6 +10,7 @@ interface ITaskRepository {
   getTasksNotFinished(): Promise<Task[]>
   getTasksFinished(): Promise<Task[]>
   editTask({ taskId, title, description }: IEditTask): Promise<Task>
+  getAllTasks(): Promise<Task[]>
 }
 
 export { ITaskRepository };

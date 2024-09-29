@@ -64,6 +64,12 @@ class TaskRepository implements ITaskRepository {
 
     return taskReturn[0];
   }
+
+  async getAllTasks(): Promise<Task[]> {
+    const tasks = await this.database.select().from(task);
+
+    return tasks;
+  }
 }
 
 export { TaskRepository };

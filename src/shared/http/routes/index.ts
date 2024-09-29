@@ -15,6 +15,9 @@ import {
    GetTasksFinishedController 
 } from '../../../modules/task/useCases/getTasksFinished/GetTasksFinishedController';
 import { EditTaskController } from '../../../modules/task/useCases/editTask/EditTaskController';
+import { 
+  GetAllTasksController 
+} from '../../../modules/task/useCases/getAllTasks/GetAllTasksController';
 
 const getActionsController = new GetActionsController();
 const createActionController = new CreateActionController();
@@ -22,6 +25,7 @@ const createTaskController = new CreateTaskController();
 const getTasksNotFinishedController = new GetTasksNotFinishedController();
 const getTasksFinishedController = new GetTasksFinishedController();
 const editTaskController = new EditTaskController();
+const getAllTasksController = new GetAllTasksController();
 
 export async function Routes(route: FastifyInstance) {
   route.get('/actions', getActionsController.handle);
@@ -35,5 +39,7 @@ export async function Routes(route: FastifyInstance) {
   route.get('/tasks-finished', getTasksFinishedController.handle);
 
   route.put('/task/:taskId', editTaskController.handle);
+
+  route.get('/tasks', getAllTasksController.handle);
   
 }
