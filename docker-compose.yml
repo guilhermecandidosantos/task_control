@@ -1,0 +1,11 @@
+name: task-control
+
+services:
+  pg:
+    image: bitnami/postgresql:13.16.0
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=taskcontrol
+      - POSTGRES_PASSWORD=t4skc0ntr0l
+      - POSTGRES_DB=taskcontrol
